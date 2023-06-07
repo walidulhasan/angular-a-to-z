@@ -9,6 +9,7 @@ import { InputsAndtheInputDecoratorComponent } from './AngularForBeginners/compo
 import { NgforDirectiveComponent } from './AngularForBeginners/components/ngfor-directive/ngfor-directive.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,4 +1,4 @@
-<h1>ngfor-directive works!</h1>
+<h1>ngfor | ngIf | ngClass | ngStyle | ngSwitchCase -directive works!</h1>
 <table>
   <thead>
     <th>#id</th>
@@ -9,9 +9,11 @@
   </thead>
   <tbody *ngFor="let datas of data; index as i;first as isFirst; last as isLast; odd as isOdd;even as isEven">
     <td>{{i+1}}</td>
-    <td>{{datas.description}} <sub>First: {{isFirst}}</sub></td>
+    <td  [ngSwitch]="datas.category">
+      <div *ngSwitchCase="datas.category=='ADVANCED'">output</div>
+      <div *ngSwitchDefault>All</div>{{datas.description}} <sub>First: {{isFirst}}</sub></td>
     <td><p [ngStyle]="isDescription()">{{datas.longDescription}} <sub>Odd: {{isOdd}}</sub></p></td>
     <td><img [src]="datas.iconUrl" width="40" ><sub>Even: {{isEven}}</sub></td>
-    <td ><p [ngClass]="isCategoryAdvanced()">{{datas.category}} <sub>List: {{isFirst}}</sub></p></td>
+    <td ><p [ngClass]="isCategoryAdvanced()" >{{datas.category}} <sub>List: {{isFirst}}</sub></p></td>
   </tbody>
 </table>
