@@ -1,20 +1,22 @@
 <h2>Inputs and the @Input Decorator (<input (click)="inputDecorator()"  type="button" value="clickMe">) | Custom Events and Event Emitters(<input (click)="customEvent()"  type="button" value="clickMe">)</h2><sub>This Decorator fully responsable for <span style="color:red">Parent to Child Data Passing</span> </sub>
-<div class="card">
-  <img [ngStyle]="{ 'background-color': inputDecoratorChk ? 'yellow' : 'white' }" [src]="courses?.iconUrl" alt="Avatar" width="289" />
+<div class="card" *ngIf="courses else nodata">
+  <img [ngStyle]="{ 'background-color': inputDecoratorChk ? 'yellow' : 'white' }" [src]="courses.iconUrl" alt="Avatar" width="289" />
   <div class="container">
     <h4>
-      <b [ngStyle]="{ 'background-color': inputDecoratorChk ? 'yellow' : 'white' }">{{ courses?.description }}</b>
+      <b [ngStyle]="{ 'background-color': inputDecoratorChk ? 'yellow' : 'white' }">{{ courses.description }}</b>
     </h4>
     <p [ngStyle]="{ 'background-color': inputDecoratorChk ? 'yellow' : 'white' }">
-      {{ courses?.longDescription }} <sub>{{ courses?.lessonsCount }}</sub>
+      {{ courses.longDescription }} <sub>{{ courses.lessonsCount }}</sub>
     </p>
-    <label [ngStyle]="{ 'background-color': inputDecoratorChk ? 'yellow' : 'white' }">Category: {{ courses?.category }}</label>
+    <label [ngStyle]="{ 'background-color': inputDecoratorChk ? 'yellow' : 'white' }">Category: {{ courses.category }}</label>
     <div style="text-align: center">
       <button  [ngStyle]="{ 'background-color': customEventChk ? 'green' : 'red' }" (click)="onCrouseView()">View Courses</button>
-      
+
     </div>
   </div>
 </div>
 <br />
 
-
+<ng-template #nodata>
+  <p>No Data Found..</p>
+</ng-template>
