@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { InitialComponent } from './AngularForBeginners/components/initial/initial.component';
 import { AngularFirstComponentsComponent } from './AngularForBeginners/components/angular-first-components/angular-first-components.component';
 import { InputsAndtheInputDecoratorComponent } from './AngularForBeginners/components/inputs-andthe-input-decorator/inputs-andthe-input-decorator.component';
+import { NgforDirectiveComponent } from './AngularForBeginners/components/ngfor-directive/ngfor-directive.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { InputsAndtheInputDecoratorComponent } from './AngularForBeginners/compo
     AppComponent,
     InitialComponent,
     AngularFirstComponentsComponent,
-    InputsAndtheInputDecoratorComponent
+    InputsAndtheInputDecoratorComponent,
+    NgforDirectiveComponent
   ],
   imports: [
     BrowserModule,

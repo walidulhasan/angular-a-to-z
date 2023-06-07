@@ -1,0 +1,17 @@
+<h1>ngfor-directive works!</h1>
+<table>
+  <thead>
+    <th>#id</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Image</th>
+    <th>Category</th>
+  </thead>
+  <tbody *ngFor="let datas of data; index as i;first as isFirst; last as isLast; odd as isOdd;even as isEven">
+    <td>{{i+1}}</td>
+    <td>{{datas.description}} <sub>First: {{isFirst}}</sub></td>
+    <td><p>{{datas.longDescription}} <sub>Odd: {{isOdd}}</sub></p></td>
+    <td><img [src]="datas.iconUrl" width="20" ><sub>Even: {{isEven}}</sub></td>
+    <td><p>{{datas.category}} <sub>List: {{isFirst}}</sub></p></td>
+  </tbody>
+</table>
