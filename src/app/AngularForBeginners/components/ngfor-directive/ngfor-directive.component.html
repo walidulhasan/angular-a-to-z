@@ -12,6 +12,6 @@
     <td>{{datas.description}} <sub>First: {{isFirst}}</sub></td>
     <td><p>{{datas.longDescription}} <sub>Odd: {{isOdd}}</sub></p></td>
     <td><img [src]="datas.iconUrl" width="40" ><sub>Even: {{isEven}}</sub></td>
-    <td><p>{{datas.category}} <sub>List: {{isFirst}}</sub></p></td>
+    <td ><p [ngClass]="isCategoryAdvanced()">{{datas.category}} <sub>List: {{isFirst}}</sub></p></td>
   </tbody>
 </table>

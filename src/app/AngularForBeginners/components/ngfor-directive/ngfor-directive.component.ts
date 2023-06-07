@@ -9,5 +9,9 @@ import { COURSES } from '../../db-data';
 })
 export class NgforDirectiveComponent {
   data:Array<Courses>=COURSES
-  
+  isCategoryAdvanced=()=>{
+    return{
+      'advanced':this.data[2].category=='ADVANCED'
+    }
+  }
 }
