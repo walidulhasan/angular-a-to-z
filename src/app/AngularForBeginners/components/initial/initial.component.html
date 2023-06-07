@@ -1,13 +1,30 @@
 <div>
-  <h1 style="text-align: center;">{{data.title}}</h1>
-  <img  src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png" alt="Click Me" width="60" (click)="onLoadClicked()">
- <br>
-  <input class="demo" (keyup)="onKeyUp(inputTitle.value)" type="text" [value]="data.title" #inputTitle>
+  <h1 style="text-align: center">{{ data.title }}</h1>
+  <img
+    src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png"
+    alt="Click Me"
+    width="60"
+    (click)="onLoadClicked()"
+  />
+  <br />
+  <input
+    class="demo"
+    (keyup)="onKeyUp(inputTitle.value)"
+    type="text"
+    [value]="data.title"
+    #inputTitle
+  />
 
-
-  <h2>Angular First Component</h2>
   <div>
-    <app-angular-first-components></app-angular-first-components>
+    <h2>Angular First Component</h2>
+    <app-angular-first-components ></app-angular-first-components>
   </div>
+  <br />
+  <div>
+    <h2>Inputs and the @Input Decorator </h2><sub>This Decorator fully responsable for <span style="color:red">Parent to Child Data Passing</span> </sub>
+    <app-inputs-andthe-input-decorator [courses]="coreCourses"></app-inputs-andthe-input-decorator>
+  </div>
+  <h1>
+    <p>{{coreCourses.description}}</p>
+  </h1>
 </div>
-
