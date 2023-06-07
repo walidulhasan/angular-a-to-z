@@ -15,6 +15,7 @@ export class InitialComponent {
   title:'This is Angular For Beginners'
  }
 
+ viewData:object={}
  onLoadClicked=()=>{
   alert('Hello World!');
   console.log(this.coreCourses);
@@ -22,5 +23,10 @@ export class InitialComponent {
 
  onKeyUp=(title:string)=>{
   this.data.title=title;
+ }
+
+ onCrouseSelected=(course:Courses)=>{
+  this.viewData=course;
+  console.log(course);
  }
 }
