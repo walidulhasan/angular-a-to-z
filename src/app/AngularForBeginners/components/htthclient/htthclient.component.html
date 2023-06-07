@@ -1,0 +1,9 @@
+<h1>htthclient works!</h1>
+<ul *ngIf="data else isDataFound">
+  <li *ngFor="let datas of data">
+    {{datas.countryID}}--{{datas.countryName}}--{{datas.countryNameUC}}
+  </li>
+</ul>
+<ng-template #isDataFound>
+  <p>Data Can't Found</p>
+</ng-template>

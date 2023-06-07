@@ -7,7 +7,9 @@ import { InitialComponent } from './AngularForBeginners/components/initial/initi
 import { AngularFirstComponentsComponent } from './AngularForBeginners/components/angular-first-components/angular-first-components.component';
 import { InputsAndtheInputDecoratorComponent } from './AngularForBeginners/components/inputs-andthe-input-decorator/inputs-andthe-input-decorator.component';
 import { NgforDirectiveComponent } from './AngularForBeginners/components/ngfor-directive/ngfor-directive.component';
-
+import { PipeComponent } from './AngularForBeginners/components/pipe/pipe.component';
+import { HTTHClientComponent } from './AngularForBeginners/components/htthclient/htthclient.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -16,11 +18,14 @@ import { NgforDirectiveComponent } from './AngularForBeginners/components/ngfor-
     InitialComponent,
     AngularFirstComponentsComponent,
     InputsAndtheInputDecoratorComponent,
-    NgforDirectiveComponent
+    NgforDirectiveComponent,
+    PipeComponent,
+    HTTHClientComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
