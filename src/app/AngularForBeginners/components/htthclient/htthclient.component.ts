@@ -1,7 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { CustomService } from '../../services/custom.service';
+import { Observable } from 'rxjs';
+import { Country } from '../../Models/country';
 
 @Component({
   selector: 'app-htthclient',
@@ -10,15 +11,11 @@ import { CustomService } from '../../services/custom.service';
 })
 export class HTTHClientComponent implements OnInit{
 
-  data:any
-  constructor(private http:HttpClient,private customService:CustomService){
+  data:Observable<Country[]> | undefined;
+  constructor(private customService:CustomService){
 
   }
   ngOnInit(): void {
-    const params=new HttpParams()
-                    .set("page","1")
-                    .set("pageSize","10");
-    this.http.get('http://192.173.163.190:8091/api/Countries',{params})
-             .subscribe(val=>this.data=val);
+    this.data=this.customService.loadData();
   }
 }
