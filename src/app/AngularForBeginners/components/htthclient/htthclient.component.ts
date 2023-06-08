@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,6 +13,9 @@ export class HTTHClientComponent implements OnInit{
 
   }
   ngOnInit(): void {
-    this.http.get('http://192.173.163.190:8091/api/Countries').subscribe(val=>this.data=val);
+    const params=new HttpParams()
+                    .set("page","1")
+                    .set("pageSize","10");
+    this.http.get('http://192.173.163.190:8091/api/Countries',{params}).subscribe(val=>this.data=val);
   }
 }
